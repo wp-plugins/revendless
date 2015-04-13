@@ -12,7 +12,7 @@ The Revendless plugin allows publishers and bloggers to easily integrate the Rev
 
 == Description ==
 
-The Revendless JavaScript SDK is a toolkit for professional fashion, beauty & lifestyle bloggers and helps to easily monetize their content.
+The Revendless JavaScript SDK is a toolkit for professional fashion, beauty & lifestyle bloggers and helps them to easily monetize their content.
 
 == Installation ==
 
