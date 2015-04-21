@@ -39,6 +39,7 @@ No, the plugin is free to use.
 = 0.0.6 =
 
 * Bugfixes
+* Design changes
 
 = 0.0.5 =
 
