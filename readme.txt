@@ -3,7 +3,7 @@ Contributors: revendless
 Donate link: https://www.revendless.com
 Tags: e-commerce, products, affiliate, fashion, beauty, living, lifestyle, living
 Requires at least: 3.0.1
-Tested up to: 3.4
+Tested up to: 4.2
 Stable tag: 4.3
 License: Expat License
 License URI: http://www.gnu.org/licenses/license-list.html#Expat
@@ -35,6 +35,14 @@ No, the plugin is free to use.
 2. screenshot-3.jpg
 
 == Changelog ==
+
+= 0.0.6 =
+
+* Bugfixes
+
+= 0.0.5 =
+
+* URL-Shortener integration
 
 = 0.0.4 =
 
