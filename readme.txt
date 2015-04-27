@@ -36,6 +36,10 @@ No, the plugin is free to use.
 
 == Changelog ==
 
+= 0.0.8 =
+
+* Bugfixes
+
 = 0.0.7 =
 
 * Add shortcodes to excerpts and widgets

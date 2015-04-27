@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Revendless
- * @version 0.0.7
+ * @version 0.0.8
  */
 /*
 Plugin Name: Revendless
 Plugin URI: http://www.revendless.com
 Description: Used by thousands of websites and blogs, <strong>Revendless is one of the best monetization toolkits</strong> out there. It helps you to generate advertising revenues in an automated fashion, easy and effective! To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="http://www.revendless.com/registration">Sign up for your Revendless account and get your free API key</a>, and 3) Go to the Revendless configuration page and save your API key.
-Version: 0.0.7
+Version: 0.0.8
 Author: Revendless
 Author URI: http://www.revendless.com
 Text Domain: revendless
@@ -54,7 +54,7 @@ class Revendless_Loader {
 	 *
 	 * @var string
 	 */
-	const VERSION = '0.0.7';
+	const VERSION = '0.0.8';
 
 	/**
 	 * Plugin update url
@@ -153,23 +153,30 @@ class Revendless_Loader {
 	 */
 	public function initShortCodes()
 	{
-		add_shortcode('rev-widget', function($atts) {
-
-			$atts = shortcode_atts( array(
-				'ids' => null,
-			), $atts);
-
-			$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
-
-			$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-			$output.= '<div class="rev-widget" data-type="product"'.$ids.'></div>'."\n";
-
-			return $output;
-
-		});
+		add_shortcode('rev-widget', array(&$this, 'addWidgetShortCodes'));
 
 		add_filter('the_excerpt', 'do_shortcode');
 		add_filter('widget_text', 'do_shortcode');
+	}
+
+	/**
+	 * Add widget short codes
+	 *
+	 * @param array $atts
+	 * @return void
+	 */
+	public function addWidgetShortCodes($atts)
+	{
+		$atts = shortcode_atts(array(
+			'ids' => null,
+		), $atts);
+
+		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
+
+		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
+		$output.= '<div class="rev-widget" data-type="product"'.$ids.'></div>'."\n";
+
+		return $output;
 	}
 
 }
