@@ -153,19 +153,25 @@ class Revendless_Loader {
 	 */
 	public function initShortCodes()
 	{
-		add_shortcode('rev-widget', array(&$this, 'addWidgetShortCodes'));
+		/* @fix: keep previous shortcodes working */
+		add_shortcode('rev-widget', array(&$this, 'addCarouselShortCode'));
 
+		/* shortcodes */
+		add_shortcode('rev-carousel', array(&$this, 'addCarouselShortCode'));
+		add_shortcode('rev-board', array(&$this, 'addBoardShortCode'));
+
+		/* adds shortcodes to wordpress excerpts and widgets */
 		add_filter('the_excerpt', 'do_shortcode');
 		add_filter('widget_text', 'do_shortcode');
 	}
 
 	/**
-	 * Add widget short codes
+	 * Add carousel short code
 	 *
 	 * @param array $atts
 	 * @return void
 	 */
-	public function addWidgetShortCodes($atts)
+	public function addCarouselShortCode($atts)
 	{
 		$atts = shortcode_atts(array(
 			'ids' => null,
@@ -174,7 +180,27 @@ class Revendless_Loader {
 		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
 
 		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-		$output.= '<div class="rev-widget" data-type="product"'.$ids.'></div>'."\n";
+		$output.= '<div class="rev-carousel" data-type="product"'.$ids.'></div>'."\n";
+
+		return $output;
+	}
+
+	/**
+	 * Add board short code
+	 *
+	 * @param array $atts
+	 * @return void
+	 */
+	public function addBoardShortCode($atts)
+	{
+		$atts = shortcode_atts(array(
+			'ids' => null,
+		), $atts);
+
+		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
+
+		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
+		$output.= '<div class="rev-board" data-type="product"'.$ids.'></div>'."\n";
 
 		return $output;
 	}
