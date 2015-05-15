@@ -36,6 +36,10 @@ No, the plugin is free to use.
 
 == Changelog ==
 
+= 0.0.9 =
+
+* Add new widget types
+
 = 0.0.8 =
 
 * Bugfixes
