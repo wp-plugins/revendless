@@ -1,0 +1,42 @@
+
+#rev-toolkit {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    z-index: 99999999;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#rev-toolkit iframe {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+#rev-toolkit-button {
+    padding: 0 6px 0 5px;
+}
+
+#rev-toolkit-button span {
+    margin: 0 4px 0 2px;
+}
+
+#rev-toolkit-button span:before {
+    font-family: 'revendless' !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e600";
+    color: #888;
+}
+
+@media (min-height: 400px) and (min-width: 900px) {
+    #rev-toolkit {
+        padding: 30px;
+    }
+}
