@@ -157,8 +157,8 @@ class Revendless_Loader {
 		add_shortcode('rev-widget', array(&$this, 'addCarouselShortCode'));
 
 		/* shortcodes */
-		add_shortcode('rev-widget-carousel', array(&$this, 'addCarouselShortCode'));
-		add_shortcode('rev-widget-board', array(&$this, 'addBoardShortCode'));
+		add_shortcode('rev-carousel', array(&$this, 'addCarouselShortCode'));
+		add_shortcode('rev-board', array(&$this, 'addBoardShortCode'));
 
 		/* adds shortcodes to wordpress excerpts and widgets */
 		add_filter('the_excerpt', 'do_shortcode');
@@ -180,7 +180,7 @@ class Revendless_Loader {
 		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
 
 		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-		$output.= '<div class="rev-widget-carousel" data-type="product"'.$ids.'></div>'."\n";
+		$output.= '<div class="rev-carousel" data-type="product"'.$ids.'></div>'."\n";
 
 		return $output;
 	}
@@ -200,7 +200,7 @@ class Revendless_Loader {
 		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
 
 		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-		$output.= '<div class="rev-widget-board" data-type="product"'.$ids.'></div>'."\n";
+		$output.= '<div class="rev-board" data-type="product"'.$ids.'></div>'."\n";
 
 		return $output;
 	}
