@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Revendless
- * @version 0.0.9
+ * @version 0.1.0
  */
 /*
 Plugin Name: Revendless
 Plugin URI: http://www.revendless.com
 Description: Used by thousands of websites and blogs, <strong>Revendless is one of the best monetization toolkits</strong> out there. It helps you to generate advertising revenues in an automated fashion, easy and effective! To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="http://www.revendless.com/registration">Sign up for your Revendless account and get your free API key</a>, and 3) Go to the Revendless configuration page and save your API key.
-Version: 0.0.9
+Version: 0.1.0
 Author: Revendless
 Author URI: http://www.revendless.com
 Text Domain: revendless
@@ -54,7 +54,7 @@ class Revendless_Loader {
 	 *
 	 * @var string
 	 */
-	const VERSION = '0.0.9';
+	const VERSION = '0.1.0';
 
 	/**
 	 * Plugin update url
@@ -157,8 +157,8 @@ class Revendless_Loader {
 		add_shortcode('rev-widget', array(&$this, 'addCarouselShortCode'));
 
 		/* shortcodes */
-		add_shortcode('rev-carousel', array(&$this, 'addCarouselShortCode'));
-		add_shortcode('rev-board', array(&$this, 'addBoardShortCode'));
+		add_shortcode('rev-widget-carousel', array(&$this, 'addCarouselShortCode'));
+		add_shortcode('rev-widget-board', array(&$this, 'addBoardShortCode'));
 
 		/* adds shortcodes to wordpress excerpts and widgets */
 		add_filter('the_excerpt', 'do_shortcode');
@@ -180,7 +180,7 @@ class Revendless_Loader {
 		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
 
 		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-		$output.= '<div class="rev-carousel" data-type="product"'.$ids.'></div>'."\n";
+		$output.= '<div class="rev-widget-carousel" data-type="product"'.$ids.'></div>'."\n";
 
 		return $output;
 	}
@@ -200,7 +200,7 @@ class Revendless_Loader {
 		$ids = (!is_null($atts['ids'])) ? ' data-ids="'.$atts['ids'].'"' : '';
 
 		$output = '<!-- Product integrations powered by Revendless / http://www.revendless.com -->'."\n";
-		$output.= '<div class="rev-board" data-type="product"'.$ids.'></div>'."\n";
+		$output.= '<div class="rev-widget-board" data-type="product"'.$ids.'></div>'."\n";
 
 		return $output;
 	}
