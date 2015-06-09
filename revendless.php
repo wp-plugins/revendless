@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Revendless
- * @version 0.1.0
+ * @version 0.1.1
  */
 /*
 Plugin Name: Revendless
 Plugin URI: http://www.revendless.com
 Description: Used by thousands of websites and blogs, <strong>Revendless is one of the best monetization toolkits</strong> out there. It helps you to generate advertising revenues in an automated fashion, easy and effective! To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="http://www.revendless.com/registration">Sign up for your Revendless account and get your free API key</a>, and 3) Go to the Revendless configuration page and save your API key.
-Version: 0.1.0
+Version: 0.1.1
 Author: Revendless
 Author URI: http://www.revendless.com
 Text Domain: revendless
@@ -54,7 +54,7 @@ class Revendless_Loader {
 	 *
 	 * @var string
 	 */
-	const VERSION = '0.1.0';
+	const VERSION = '0.1.1';
 
 	/**
 	 * Plugin update url

@@ -40,7 +40,7 @@ class RevendlessSettingsGeneral extends RevendlessSettings
 	 * @var array
 	 */
 	public static $urlShortenerChoices = array(
-		'bitly' => 'bit.ly'
+		'google' => 'goo.gl'
 	);
 
 	/**

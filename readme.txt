@@ -36,6 +36,10 @@ No, the plugin is free to use.
 
 == Changelog ==
 
+= 0.1.1 =
+
+* Replace bit.ly with google shortener
+
 = 0.1.0 =
 
 * Bugfixes
